@@ -25,8 +25,27 @@ echo json_encode($lista);*/
 
 echo json_encode($search);*/
 
-$usuario = new Usuario();
-$usuario->login("user", "12k345");
+/*$usuario = new Usuario();
+$usuario->login("user", "12345");
 
-echo $usuario;
+echo $usuario;*/
+
+/*$aluno = new Usuario("Teste", "metodo");
+$aluno -> insert();
+echo $aluno;*/
+
+/*$usuario = new Usuario();
+
+$usuario->loadById(6);
+
+$usuario->update("professor", "odke039@#");
+
+echo $usuario;*/
+
+$usuario = new Usuario();
+$usuario->loadById(2);
+$usuario->remove();
+echo $usuario
+
+
 ?>

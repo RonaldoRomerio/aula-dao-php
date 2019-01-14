@@ -4,9 +4,7 @@ class Sql extends PDO{
 	private $conn;
 	
 	public function __construct(){
-		
 		$this->conn = new PDO("mysql:dbname=dbphp7; host=localhost","root","");
-	
 	}
 	private function setParams($statment, $parameters = array()){
 		foreach ($parameters as $key => $value){
@@ -17,10 +15,9 @@ class Sql extends PDO{
 		$statment->bindParam($key, $value);
 	}
 	public function query($rawquery, $params = array()){
+		
 		$stmt = $this->conn->prepare($rawquery);
-		
 		$this->setParams($stmt, $params);
-		
 		$stmt->execute();
 		return $stmt;
 	}
